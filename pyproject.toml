@@ -1,0 +1,18 @@
+[project]
+name = "homework-20250224"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Sergey",email = "sgudkovv@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pytest (>=8.3.4,<9.0.0)",
+    "mypy (>=1.15.0,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
