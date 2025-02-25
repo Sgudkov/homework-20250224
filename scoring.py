@@ -2,10 +2,11 @@ import hashlib
 import json
 from datetime import datetime
 from typing import Optional
+from store import Store
 
 
 def get_score(
-        store,
+        store: Store,
         phone: Optional[str] = None,
         email: Optional[str] = None,
         birthday: Optional[datetime] = None,
@@ -42,6 +43,6 @@ def get_score(
     return score
 
 
-def get_interests(store, cid: str) -> list:
+def get_interests(store: Store, cid: str) -> list:
     r = store.get(f"i:{cid}")
     return json.loads(r) if r else []

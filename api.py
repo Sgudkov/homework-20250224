@@ -311,7 +311,7 @@ def method_handler(request, ctx, store):
 
             ctx["has"] = get_filled_fields(s)
             score = get_score(
-                store=None,
+                store=store,
                 phone=s.phone,
                 email=s.email,
                 birthday=s.birthday,
@@ -328,7 +328,7 @@ def method_handler(request, ctx, store):
             except Exception as e:
                 return e.args[0], INVALID_REQUEST
             ctx["nclients"] = len(client_inter.client_ids)
-            return get_interests(store=None, cid=client_inter.client_ids), OK
+            return get_interests(store=store, cid=client_inter.client_ids), OK
     return "", OK
 
 
